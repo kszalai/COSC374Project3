@@ -2,7 +2,7 @@
  * Kyle Szalai (E01006866)
  * Rob Kendall (E00958364)
  * Greg McKinstry (E00000000)
- * Bryan Andrews (E00000000)
+ * Bryan Andrews (E01244329)
  * COSC 374
  * Project 3
  * 
