@@ -6,15 +6,24 @@ public class MoneyOrder {
 	private String fName;
 	private String lName;
 	private String strNum;
-	private String strName;
-	private String strType;
-	private String city;
-	private String state;
-	private String zip;
-	private String ID;
+	private String strNa;
+	private String strTy;
+	private String ci;
+	private String st;
+	private String zi;
+	private String MO_ID;
 	
-	// variables for money order info
-	private double amount;
-	private int MonOrdnums;
-	private int IDnums;
+	// variables for:
+	// 1) amount
+	// 2) number of money orders to generate
+	// 3) large string with all the info concatinated excluding the number of money orders generated
+	private double am;
+	private int MO_nums;
+	private int ID_String;
+	
+	// parameterized constructor
+	public MoneyOrder(String first, String last, String strNum, String strNumber, String strName, String strType, String city, String state, String zip,String MonOrdID, double amount,String MonOrdNums) {
+		
+	}
+	
 }
