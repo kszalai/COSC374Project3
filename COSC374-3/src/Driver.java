@@ -14,14 +14,17 @@ import java.util.*;
 
 public class Driver {
 
+	// initialize Customer array
+	static Customer myStructure = new Customer();
+
 	public static Scanner keyboard = new Scanner(System.in);
 
 	public static void main(String[] args) {
 		int response;
 
 		System.out.println("Welcome");
-		
-		//Keep menu running while valid responses
+
+		// Keep menu running while valid responses
 		do {
 
 			System.out.println("1. Send Money Order");
@@ -36,10 +39,10 @@ public class Driver {
 				System.out.println("GoodBye");
 			}
 
-		} while (response > 0 && response < 3 && response !=2);
+		} while (response > 0 && response < 3 && response != 2);
 	}
 
-	//Will take in the detail for a new money order
+	// Will take in the detail for a new money order
 	private static void SendMoneyOrder() {
 		
 		//Ask the user how many money orders the user would like
