@@ -39,8 +39,9 @@ public class Driver {
 		} while (response > 0 && response < 3 && response !=2);
 	}
 
+	//Will take in the detail for a new money order
 	private static void SendMoneyOrder() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 }
