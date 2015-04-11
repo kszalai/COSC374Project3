@@ -42,6 +42,20 @@ public class Driver {
 	//Will take in the detail for a new money order
 	private static void SendMoneyOrder() {
 		
+		//Ask the user how many money orders the user would like
+		int n = 0;
+		System.out.println("How many money orders would you like?");
+		n = keyboard.nextInt();
+		keyboard.nextLine();
 		
+		MoneyOrder [] orders = new MoneyOrder[n];
+		
+		//Variables needed for moneyOrder constructor
+		String firstName, lastName, strNum, strName, city, state, zipCode, am;
+		
+		for(int i=0;i<orders.length;i++)
+		{
+			
+		}
 	}
 }
