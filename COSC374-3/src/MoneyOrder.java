@@ -15,44 +15,37 @@
 import java.util.*;
 
 public class MoneyOrder {
-// variables for customer info
-	private String fName;
-	private String lName;
-	private String strNum;
-	private String strNa;
-	private String strTy;
-	private String ci;
-	private String st;
-	private String zi;
-	private String MO_ID;
-	
+	// variables for customer info
+	private String ssn;
+	private String MO_ID; //uniqueString in driver
+
 	// variables for:
 	// 1) amount
 	// 2) number of money orders to generate
 	// 3) large string with all the info concatinated excluding the number of money orders generated
 	private double am;
-	private int MO_nums;
 	private int ID_String;
-	
+
 	// parameterized constructor
-	public MoneyOrder(String first, String last, String strNumber, String strName, String strType, String city, String state, String zip,String MonOrdID, double amount,int MonOrdNums) {
-		fName = first;
-		lName = last;
-		strNum = strNumber;
-		strNa = strName;
-		strTy = strType;
-		ci = city;
-		st = state;
-		zi = zip;
+	public MoneyOrder(String ssn, String MonOrdID, double amount) {
+		this.ssn = ssn;
 		MO_ID = MonOrdID;
 		am= amount;
-		MO_nums = MonOrdNums;
-		
+
 	}
-	
+
 	public String toString() { // return parameters to the display method
 		// in MoneyOrder class
-return (fName + " " + lName + " " + strNum + " " + strNa + " " + strTy + " " + ci + " " + st + " " + zi + " " + MO_ID + " " + am + " " + MO_nums);
-}
+		return (ssn + " " + MO_ID + " " + am);
+	}
 	
+	//Get ID_String
+	public String getMOID()
+	{
+		return MO_ID;
+	}
+
+	public void display() {
+		System.out.println(ssn + " " + MO_ID + " " + am);
+	}
 }
