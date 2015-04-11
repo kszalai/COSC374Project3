@@ -1,6 +1,5 @@
 public class Customer {
 
-	MoneyOrder data[][] = new MoneyOrder[][];
 
 	// constructor
 	public void insert(String first, String last, String strNumber,
