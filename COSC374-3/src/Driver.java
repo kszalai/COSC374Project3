@@ -28,19 +28,29 @@ public class Driver {
 		// Keep menu running while valid responses
 		do {
 
-			System.out.println("1. Send Money Order");
-			System.out.println("2. Quit");
+			System.out.println("1. Customer");
+			System.out.println("2. Merchant");
+			System.out.println("3. Bank");
+			System.out.println("4. Quit");
 			response = keyboard.nextInt();
+			keyboard.nextInt();
 
 			switch (response) {
 			case 1:
+				//CustomerStuff
 				SendMoneyOrder();
 				break;
 			case 2:
-				System.out.println("GoodBye");
+				//mechantStuff
+				break;
+			case 3:
+				//bankStuff
+				break;
 			}
 
-		} while (response > 0 && response < 3 && response != 2);
+		} while(response<4);
+		
+		System.out.println("Good bye!");
 	}
 
 	// Will take in the detail for a new money order
