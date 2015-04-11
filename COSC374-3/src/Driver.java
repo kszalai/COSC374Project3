@@ -1,3 +1,15 @@
+/***********************************
+ * Kyle Szalai (E01006866)
+ * Rob Kendall (E00000000)
+ * Greg McKinstry (E00000000)
+ * Bryan Andrews (E00000000)
+ * COSC 374
+ * Project 3
+ * 
+ * driver.java
+ * 
+ * This is the main driver program
+ ***********************************/
 import java.util.*;
 
 public class Driver {
