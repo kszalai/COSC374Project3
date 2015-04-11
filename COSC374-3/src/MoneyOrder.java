@@ -35,7 +35,7 @@ public class MoneyOrder {
 	private int ID_String;
 	
 	// parameterized constructor
-	public MoneyOrder(String first, String last, String strNumber, String strName, String strType, String city, String state, String zip,String MonOrdID, double amount,String MonOrdNums) {
+	public MoneyOrder(String first, String last, String strNumber, String strName, String strType, String city, String state, String zip,String MonOrdID, double amount,int MonOrdNums) {
 		fName = first;
 		lName = last;
 		strNum = strNumber;
@@ -45,6 +45,14 @@ public class MoneyOrder {
 		st = state;
 		zi = zip;
 		MO_ID = MonOrdID;
+		am= amount;
+		MO_nums = MonOrdNums;
+		
 	}
+	
+	public String toString() { // return parameters to the display method
+		// in MoneyOrder class
+return (fName + " " + lName + " " + strNum + " " + strNa + " " + strTy + " " + ci + " " + st + " " + zi + " " + MO_ID + " " + am + " " + MO_nums);
+}
 	
 }
