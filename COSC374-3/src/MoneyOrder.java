@@ -22,8 +22,16 @@ public class MoneyOrder {
 	private int ID_String;
 	
 	// parameterized constructor
-	public MoneyOrder(String first, String last, String strNum, String strNumber, String strName, String strType, String city, String state, String zip,String MonOrdID, double amount,String MonOrdNums) {
-		
+	public MoneyOrder(String first, String last, String strNumber, String strName, String strType, String city, String state, String zip,String MonOrdID, double amount,String MonOrdNums) {
+		fName = first;
+		lName = last;
+		strNum = strNumber;
+		strNa = strName;
+		strTy = strType;
+		ci = city;
+		st = state;
+		zi = zip;
+		MO_ID = MonOrdID;
 	}
 	
 }
