@@ -22,7 +22,8 @@ public class Driver {
 	public static void main(String[] args) {
 		int response;
 
-		System.out.println("Welcome");
+		System.out.println("Welcome to the Dank Memes Exchange");
+		System.out.println("Who are you?");
 
 		// Keep menu running while valid responses
 		do {
