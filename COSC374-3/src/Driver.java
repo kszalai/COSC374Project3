@@ -113,6 +113,7 @@ public class Driver {
 		int j;
 		for (j = 0; j < nElems; j++) {
 			String temp = orders[j].getMOID();
+			//This should be zero if you want to test if the strings are the same, IE: 			if (temp.compareTo(uniqueString) == 0)
 			if (temp.compareTo(uniqueString) == true)
 				break;
 		}
