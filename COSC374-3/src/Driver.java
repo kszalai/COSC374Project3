@@ -5,6 +5,7 @@ public class Driver {
 	public static Scanner keyboard = new Scanner(System.in);
 
 	public static void main(String[] args) {
+		int response;
 
 		System.out.println("Welcome");
 
@@ -12,7 +13,7 @@ public class Driver {
 
 			System.out.println("1. Send Money Order");
 			System.out.println("2. Quit");
-			int response = keyboard.nextInt();
+			response = keyboard.nextInt();
 
 			switch (response) {
 			case 1:
@@ -22,6 +23,11 @@ public class Driver {
 				System.out.println("GoodBye");
 			}
 
-		} while (response > 0 && response < 3);
+		} while (response > 0 && response < 3 && response !=2);
+	}
+
+	private static void SendMoneyOrder() {
+		// TODO Auto-generated method stub
+		
 	}
 }
