@@ -15,6 +15,7 @@ import java.util.*;
 public class Driver {
 
 	public static Scanner keyboard = new Scanner(System.in);
+	public static int n;
 
 	public static void main(String[] args) {
 		int response;
@@ -34,19 +35,19 @@ public class Driver {
 
 			switch (response) {
 			case 1:
-				//CustomerStuff
+				// CustomerStuff
 				customerStuff();
 				break;
 			case 2:
-				//mechantStuff
+				// mechantStuff
 				break;
 			case 3:
-				//bankStuff
+				// bankStuff
 				break;
 			default:
 			}
 
-		} while(response<4);
+		} while (response < 4);
 
 		System.out.println("Good bye!");
 	}
@@ -54,57 +55,71 @@ public class Driver {
 	// Will take in the detail for a new money order
 	public static void customerStuff() {
 
-		//Ask the user how many money orders the user would like
-		int n = 0;
+		// Ask the user how many money orders the user would like
 		System.out.println("How many money orders would you like?");
 		n = keyboard.nextInt();
 		keyboard.nextLine();
 
-		MoneyOrder [] orders = new MoneyOrder[n];
+		MoneyOrder[] orders = new MoneyOrder[n];
 
-		//Variables needed for moneyOrder constructor
+		// Variables needed for moneyOrder constructor
 		String ssn;
 		String uniqueString = "";
 		double amount;
 
-		//Make sure SSN is proper length
-		do
-		{
+		// Make sure SSN is proper length
+		do {
 			System.out.println("Please enter your 9 digit SSN: ");
 			ssn = keyboard.nextLine();
-		} while(ssn.length()!=9);
+		} while (ssn.length() != 9);
 
-		//When searching for already generated uniqueStrings
-		//if found, keep going
-		boolean found = false;
+		// When searching for already generated uniqueStrings
+		// if found, keep going
+
 		int toNum = 100000000;
-		
-		//Enter the amount of each moneyOrder
-		for(int i=0;i<orders.length;i++)
-		{
-			//do{
-				//Generate the uniqueness String
-				for(int j=0;j<8;j++)
-				{
-					uniqueString = Integer.toString((int)(Math.random()*(toNum)) + 1);
-				}
-			//} while(uniqueString==found);
-			
-			System.out.println("Please enter the amount of the money order you want:");
+
+		// Enter the amount of each moneyOrder
+		for (int i = 0; i < orders.length; i++) {
+			boolean found;
+
+			// Generate the uniqueness String
+			for (int j = 0; j < 8; j++) {
+				do {
+					found = search(uniqueString, orders) != null;
+					uniqueString = Integer
+							.toString((int) (Math.random() * (toNum)) + 1);
+
+				} while (found);
+			}
+
+			System.out.println();
+			System.out
+					.println("Please enter the amount of the money order you want:");
 			System.out.print("$");
 			amount = keyboard.nextDouble();
-			orders[i] = new MoneyOrder(ssn,uniqueString,amount);
-			
-			
-			
-				
+			orders[i] = new MoneyOrder(ssn, uniqueString, amount);
+
 		}
 		System.out.println("Data Structure: ");
-		for(int i = 0; i<n; i++)
-		{
+		for (int i = 0; i < n; i++) {
 			System.out.println(orders[i] + " ");
 			System.out.println("");
 		}
-		
-		}
+
 	}
+
+	public static MoneyOrder search(String uniqueString, MoneyOrder[] orders) {
+		int nElems = n;
+		int j;
+		for (j = 0; j < nElems; j++) {
+			String temp = orders[j].getMOID();
+			if (temp.compareTo(uniqueString) == true)
+				break;
+		}
+		if (j == nElems) {
+			return null;
+		} else
+			return orders[j];
+
+	}
+}

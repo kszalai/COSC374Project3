@@ -17,12 +17,13 @@ import java.util.*;
 public class MoneyOrder {
 	// variables for customer info
 	private String ssn;
-	private String MO_ID; //uniqueString in driver
+	private String MO_ID; // uniqueString in driver
 
 	// variables for:
 	// 1) amount
 	// 2) number of money orders to generate
-	// 3) large string with all the info concatinated excluding the number of money orders generated
+	// 3) large string with all the info concatinated excluding the number of
+	// money orders generated
 	private double am;
 	private int ID_String;
 
@@ -30,7 +31,7 @@ public class MoneyOrder {
 	public MoneyOrder(String ssn, String MonOrdID, double amount) {
 		this.ssn = ssn;
 		MO_ID = MonOrdID;
-		am= amount;
+		am = amount;
 
 	}
 
@@ -38,14 +39,10 @@ public class MoneyOrder {
 		// in MoneyOrder class
 		return (ssn + " " + MO_ID + " " + am);
 	}
-	
-	//Get ID_String
-	public String getMOID()
-	{
+
+	// Get ID_String
+	public String getMOID() {
 		return MO_ID;
 	}
 
-	public void display() {
-		System.out.println(ssn + " " + MO_ID + " " + am);
-	}
 }
