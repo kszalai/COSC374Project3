@@ -101,16 +101,4 @@ public class Driver {
 			System.out.println("");
 		}
 	}
-
-	public static boolean search(String tempID) {
-		int j;
-		for (j = 0; j < n; j++)
-			if (orders[j].getMOID().equals(tempID))
-				break;
-		if (j == n)
-			return false;
-		else
-			return true;
-
-	}
 }
