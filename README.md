@@ -1,13 +1,20 @@
-# COSC374Project3
-Crypto-currency n stuff
+# COSC 374 - Project 3 (Digital Cash)
 
-this is the edits
+This is a system that allows money transaction between three parties: a Customer, a Merchant, and a Bank.
+<br />
+Basically this is an implementation of an electronic cash system, in which the digital cash cannot be copied or reused more than once and the privacy of the customer's identity is guaranteed.
 
+Authors 
+<br />
+<a href="http://github.com/kylewild">Kyle Szalai</a>
+<br />
+<a href="http://github.com/rkendall0717">Rob Kendall</a>
+<br />
+<a href="http://github.com/andrewsbryanc">Bryan Andrews</a> 
+<br />
+<a href="http://thetoiletstore.bigcartel.com/" title="Greg temporarily links to the Toilet Store.">Greg McKinstry</a>
 
-Rob is getting this
-
-Brian is now here
-
-Rob is doing another edit
-
-Kyle is here with another edit
+<br />
+<a href="http://www.emich.edu/">Eastern Michigan University</a>
+<br />
+(c) Kyle Szalai, Rob Kendall, Bryan Andrews, Greg McKinstry 2015
