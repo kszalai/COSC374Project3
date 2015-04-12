@@ -40,8 +40,13 @@ public class MoneyOrder {
 		return (ssn + " " + MO_ID + " " + am);
 	}
 
-	// Get ID_String
+	// Get uniqueString
 	public String getMOID() {
 		return MO_ID;
+	}
+	
+	//Set uniqueString
+	public void setMOID(String uniqueString) {
+		MO_ID = uniqueString;
 	}
 }

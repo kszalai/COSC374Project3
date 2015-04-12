@@ -22,11 +22,11 @@ public class Driver {
 		int response;
 
 		System.out.println("Welcome to the Dank Memes Exchange");
-		System.out.println("Who are you?");
 
 		// Keep menu running while valid responses
 		do {
-
+			
+			System.out.println("Please select a party");
 			System.out.println("1. Customer");
 			System.out.println("2. Merchant");
 			System.out.println("3. Bank");
@@ -73,26 +73,29 @@ public class Driver {
 		do {
 			System.out.println("Please enter your 9 digit SSN: ");
 			ssn = keyboard.nextLine();
+			
+			if(ssn.length()!=9)
+				System.out.println("Error: Invalid SSN");
 		} while (ssn.length() != 9);
-
-		// When searching for already generated uniqueStrings
-		// if found, keep going
 
 		int toNum = 100000000;
 
 		// Enter the amount of each moneyOrder
 		for (int i = 0; i < orders.length; i++) {
 			System.out.println();
-			System.out
-					.println("Please enter the amount you want for money order "
-							+ (i + 1));
+			System.out.println("Please enter the amount you want for money order " + (i + 1));
 			System.out.print("$");
 			amount = keyboard.nextDouble();
 
 			// randomly assign a uniqueString
-			uniqueString = Integer
-					.toString((int) (Math.random() * (toNum)) + 1);
+			uniqueString = Integer.toString((int) (Math.random() * (toNum)) + 1);
 			orders[i] = new MoneyOrder(ssn, uniqueString, amount);
+			
+			// Check for already generated uniqueStrings (unlikely, but just in case)
+			for(int j = 0; j < i; j++) {
+				if(orders[j].getMOID()==orders[i].getMOID())
+					orders[i].setMOID(Integer.toString((int) (Math.random() * (toNum)) + 1));
+			}
 		}
 
 		System.out.println("Data Structure: ");
