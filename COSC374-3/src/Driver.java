@@ -17,6 +17,7 @@ public class Driver {
 	public static Scanner keyboard = new Scanner(System.in);
 	public static int n;
 	public static MoneyOrder[] orders;
+	public static Merchant  merchant = new Merchant();
 
 	public static void main(String[] args) {
 		int response;
@@ -41,6 +42,7 @@ public class Driver {
 				break;
 			case 2:
 				// mechantStuff
+				System.out.println("Bit: " + merchant.randomSelectorBit());
 				break;
 			case 3:
 				// bankStuff

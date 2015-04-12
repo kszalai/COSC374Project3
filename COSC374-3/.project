@@ -14,11 +14,4 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>Cosc374Pro3</name>
-			<type>2</type>
-			<location>C:/Users/Greg/workspace/Cosc374Pro3</location>
-		</link>
-	</linkedResources>
 </projectDescription>

@@ -22,7 +22,18 @@ public class Merchant {
 		}
 		//No match was found, person is lying.
 		return false;
-		
+	}
+	
+	
+	/*
+	 * A random selector 'bit' that determines the half of the
+	 * identity string that the customer has to reveal to the
+	 * merchant as per the bit commitment protocol.
+	 */
+	
+	public int randomSelectorBit()
+	{
+		return ((int)((Math.random())*100)%2);
 	}
 
 }
