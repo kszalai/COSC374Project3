@@ -12,7 +12,7 @@ Authors
 <br />
 <a href="http://github.com/andrewsbryanc">Bryan Andrews</a> 
 <br />
-<a href="http://thetoiletstore.bigcartel.com/" title="Greg temporarily links to the Toilet Store.">Greg McKinstry</a>
+<a href="http://github.com/genericjargon">Greg McKinstry</a>
 
 <br />
 <a href="http://www.emich.edu/">Eastern Michigan University</a>
