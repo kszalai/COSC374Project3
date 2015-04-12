@@ -11,7 +11,7 @@ public class Merchant {
 	public boolean verifyBankSigniture(String signatureList[], MoneyOrder MO)
 	{
 		//for loop to search through a list of uniqueness strings from the bank.
-		for(int i = 0; i < signatureList.length(); i++)
+		for(int i = 0; i < signatureList.length; i++)
 		{
 			//an if statement tests each string and compares it to the moneyorder's
 			// signature to find a match.
