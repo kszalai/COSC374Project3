@@ -15,7 +15,6 @@ import java.util.*;
 public class Driver {
 
 	public static Scanner keyboard = new Scanner(System.in);
-	public static int n;
 
 	public static void main(String[] args) {
 		int response;
@@ -56,6 +55,7 @@ public class Driver {
 	public static void customerStuff() {
 
 		// Ask the user how many money orders the user would like
+		int n = 0;
 		System.out.println("How many money orders would you like?");
 		n = keyboard.nextInt();
 		keyboard.nextLine();
@@ -77,21 +77,15 @@ public class Driver {
 		// if found, keep going
 
 		int toNum = 100000000;
+		MoneyOrder found = null;
 
 		// Enter the amount of each moneyOrder
 		for (int i = 0; i < orders.length; i++) {
-			boolean found;
-
 			// Generate the uniqueness String
 			for (int j = 0; j < 8; j++) {
-				do {
-					found = search(uniqueString, orders) != null;
-					uniqueString = Integer
-							.toString((int) (Math.random() * (toNum)) + 1);
-
-				} while (found);
+				uniqueString = Integer
+						.toString((int) (Math.random() * (toNum)) + 1);
 			}
-
 			System.out.println();
 			System.out
 					.println("Please enter the amount of the money order you want:");
@@ -108,18 +102,4 @@ public class Driver {
 
 	}
 
-	public static MoneyOrder search(String uniqueString, MoneyOrder[] orders) {
-		int nElems = n;
-		int j;
-		for (j = 0; j < nElems; j++) {
-			String temp = orders[j].getMOID();
-			if (temp.compareTo(uniqueString) == true)
-				break;
-		}
-		if (j == nElems) {
-			return null;
-		} else
-			return orders[j];
-
-	}
 }
