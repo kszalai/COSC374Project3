@@ -28,9 +28,9 @@ public class MoneyOrder {
 	private int ID_String;
 
 	// parameterized constructor
-	public MoneyOrder(String ssn, String MonOrdID, double amount) {
+	public MoneyOrder(String ssn, String uniqueString, double amount) {
 		this.ssn = ssn;
-		MO_ID = MonOrdID;
+		MO_ID = uniqueString;
 		am = amount;
 
 	}
@@ -44,5 +44,4 @@ public class MoneyOrder {
 	public String getMOID() {
 		return MO_ID;
 	}
-
 }

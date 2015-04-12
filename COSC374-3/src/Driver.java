@@ -16,6 +16,7 @@ public class Driver {
 
 	public static Scanner keyboard = new Scanner(System.in);
 	public static int n;
+	public static MoneyOrder[] orders;
 
 	public static void main(String[] args) {
 		int response;
@@ -61,11 +62,11 @@ public class Driver {
 		n = keyboard.nextInt();
 		keyboard.nextLine();
 
-		MoneyOrder[] orders = new MoneyOrder[n];
+		orders = new MoneyOrder[n];
 
 		// Variables needed for moneyOrder constructor
 		String ssn;
-		String uniqueString = "";
+		String uniqueString;
 		double amount;
 
 		// Make sure SSN is proper length
@@ -78,29 +79,38 @@ public class Driver {
 		// if found, keep going
 
 		int toNum = 100000000;
-		MoneyOrder found = null;
 
 		// Enter the amount of each moneyOrder
 		for (int i = 0; i < orders.length; i++) {
-			// Generate the uniqueness String
-			for (int j = 0; j < 8; j++) {
-				uniqueString = Integer
-						.toString((int) (Math.random() * (toNum)) + 1);
-			}
 			System.out.println();
 			System.out
-					.println("Please enter the amount of the money order you want:");
+					.println("Please enter the amount you want for money order "
+							+ (i + 1));
 			System.out.print("$");
 			amount = keyboard.nextDouble();
-			orders[i] = new MoneyOrder(ssn, uniqueString, amount);
 
+			// randomly assign a uniqueString
+			uniqueString = Integer
+					.toString((int) (Math.random() * (toNum)) + 1);
+			orders[i] = new MoneyOrder(ssn, uniqueString, amount);
 		}
+
 		System.out.println("Data Structure: ");
 		for (int i = 0; i < n; i++) {
 			System.out.println(orders[i] + " ");
 			System.out.println("");
 		}
-
 	}
 
+	public static boolean search(String tempID) {
+		int j;
+		for (j = 0; j < n; j++)
+			if (orders[j].getMOID().equals(tempID))
+				break;
+		if (j == n)
+			return false;
+		else
+			return true;
+
+	}
 }
