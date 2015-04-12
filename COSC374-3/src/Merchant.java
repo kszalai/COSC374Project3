@@ -29,6 +29,7 @@ public class Merchant {
 	 * A random selector 'bit' that determines the half of the
 	 * identity string that the customer has to reveal to the
 	 * merchant as per the bit commitment protocol.
+	 * In this case the 'bit' is just an integer for now.
 	 */
 	
 	public int randomSelectorBit()
