@@ -88,10 +88,13 @@ public class Driver {
 			amount = keyboard.nextDouble();
 
 			// randomly assign a uniqueString
-			uniqueString = Integer.toString((int) (Math.random() * (toNum)) + 1);
+			System.out.println("Please enter x: ");
+			uniqueString = keyboard.next();//Integer.toString((int) (Math.random() * (toNum)) + 1);
 			orders[i] = new MoneyOrder(ssn, uniqueString, amount);
 			
 			// Check for already generated uniqueStrings (unlikely, but just in case)
+			// Kyle: i was thinking this approach, but did not work. i adjusted the code to show you ^^. Run and
+			// see. Nothing wrong with our get method either... just plain dont work for some odd reason
 			for(int j = 0; j < i; j++) {
 				if(orders[j].getMOID()==orders[i].getMOID())
 					orders[i].setMOID(Integer.toString((int) (Math.random() * (toNum)) + 1));
