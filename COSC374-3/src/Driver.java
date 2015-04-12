@@ -15,6 +15,7 @@ import java.util.*;
 public class Driver {
 
 	public static Scanner keyboard = new Scanner(System.in);
+	public static int n;
 
 	public static void main(String[] args) {
 		int response;
