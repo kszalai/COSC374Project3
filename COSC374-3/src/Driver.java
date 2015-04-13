@@ -93,10 +93,8 @@ public class Driver {
 			System.out.println("Please enter x: ");
 			uniqueString = keyboard.next();//Integer.toString((int) (Math.random() * (toNum)) + 1);
 			
-			
 			orders[i] = new MoneyOrder(ssn, uniqueString, amount);
-			
-			
+					
 			// Check for duplicated uniqueStrings to maintain identity (unlikely, but just in case)
 			for(int j = 0; j < i; j++) {
 				if(orders[j].getMOID().equals(orders[i].getMOID()))
