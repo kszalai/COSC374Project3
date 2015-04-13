@@ -1,3 +1,7 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 
 public class Bank {
 	private String bankSignatureList[];
@@ -10,6 +14,14 @@ public class Bank {
 	 */
 	public String[] getBankSignatures()
 	{
+		try{
+		retrieveSignaturesFromFile();
+		}catch(IOException e)
+		{
+			System.out.println("File does not exist yet!");
+			return null;
+		}
+		
 		return bankSignatureList;
 	}
 	
@@ -18,8 +30,35 @@ public class Bank {
 	 * strings from a file and stores them in the
 	 * bankSignatureList string array.
 	 */
-	private void retrieveSignaturesFromFile()
-	{
+	private void retrieveSignaturesFromFile() throws IOException {
+		//Total number of uniqueness strings should be at the top of the file.
+		int totalEntries;
+
+		//Set up a buffered reader to read each like from the file.
+		BufferedReader br = new BufferedReader(new FileReader(fileName));
+
+		try {
+			//get the first string at the top of the file
+			//This should be the total number of uniqueness 
+			//strings in the file.
+			String line = br.readLine();
+			
+			//parse the first line into an integer.
+			totalEntries = Integer.parseInt(line);
+			
+			bankSignatureList = new String[totalEntries];
+			
+		for(int i = 0; i < totalEntries; i++)
+		{
+
+			bankSignatureList[i] = br.readLine();
+
+		}
+
+		} finally {
+
+		br.close();
+		}	
 		
 	}
 

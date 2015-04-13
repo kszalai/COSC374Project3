@@ -34,6 +34,8 @@ public class Merchant {
 	
 	public int randomSelectorBit()
 	{
+		//Get a random number, multiply it by some number
+		//(I choose 100) then mod by 2
 		return ((int)((Math.random())*100)%2);
 	}
 
