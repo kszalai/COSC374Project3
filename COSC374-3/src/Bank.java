@@ -34,7 +34,7 @@ public class Bank {
 		//Total number of uniqueness strings should be at the top of the file.
 		int totalEntries;
 
-		//Set up a buffered reader to read each like from the file.
+		//Set up a buffered reader to read each line from the file.
 		BufferedReader br = new BufferedReader(new FileReader(fileName));
 
 		try {
