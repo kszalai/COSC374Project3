@@ -16,8 +16,8 @@ import java.util.*;
 
 public class MoneyOrder {
 	// variables for customer info
-	private String ssn;
-	private String MO_ID; // uniqueString in driver
+	private int ssn;
+	private String unString; // uniqueString in driver
 
 	// variables for:
 	// 1) amount
@@ -28,25 +28,24 @@ public class MoneyOrder {
 	private int ID_String;
 
 	// parameterized constructor
-	public MoneyOrder(String ssn, String uniqueString, double amount) {
+	public MoneyOrder(int ssn, String uniqueString, double amount) {
 		this.ssn = ssn;
-		MO_ID = uniqueString;
+		unString = uniqueString;
 		am = amount;
-
 	}
 
 	public String toString() { // return parameters to the display method
 		// in MoneyOrder class
-		return (ssn + " " + MO_ID + " " + am);
+		return (ssn + " " + unString + " " + am);
 	}
 
 	// Get uniqueString
 	public String getMOID() {
-		return MO_ID;
+		return unString;
 	}
 	
 	//Set uniqueString
 	public void setMOID(String uniqueString) {
-		MO_ID = uniqueString;
+		unString = uniqueString;
 	}
 }

@@ -17,7 +17,7 @@ public class Driver {
 	public static Scanner keyboard = new Scanner(System.in);
 	public static int n;
 	public static MoneyOrder[] orders;
-	public static Merchant  merchant = new Merchant();
+	public static Merchant merchant = new Merchant();
 
 	public static void main(String[] args) {
 		int response;
@@ -26,7 +26,7 @@ public class Driver {
 
 		// Keep menu running while valid responses
 		do {
-			
+
 			System.out.println("Please select a party");
 			System.out.println("1. Customer");
 			System.out.println("2. Merchant");
@@ -60,45 +60,55 @@ public class Driver {
 
 		// Ask the user how many money orders the user would like
 		int n = 0;
-		System.out.println("How many money orders would you like?");
-		n = keyboard.nextInt();
-		keyboard.nextLine();
+		do {
+			System.out.println("How many money orders would you like?");
+			n = keyboard.nextInt();
+			keyboard.nextLine();
+			
+			if(n>10)
+				System.out.println("Error: Maximum of 10 Money Orders at a time!");
+		} while (n < 0 || n > 10);
 
 		orders = new MoneyOrder[n];
 
 		// Variables needed for moneyOrder constructor
-		String ssn;
+		int ssn;
 		String uniqueString;
 		double amount;
 
 		// Make sure SSN is proper length
 		do {
 			System.out.println("Please enter your 9 digit SSN: ");
-			ssn = keyboard.nextLine();
-			
-			if(ssn.length()!=9)
+			ssn = keyboard.nextInt();
+
+			if (Integer.toString(ssn).length() != 9)
 				System.out.println("Error: Invalid SSN");
-		} while (ssn.length() != 9);
+		} while (Integer.toString(ssn).length() != 9);
 
 		int toNum = 100000000;
 
 		// Enter the amount of each moneyOrder
 		for (int i = 0; i < orders.length; i++) {
 			System.out.println();
-			System.out.println("Please enter the amount you want for money order " + (i + 1));
+			System.out
+					.println("Please enter the amount you want for money order "
+							+ (i + 1));
 			System.out.print("$");
 			amount = keyboard.nextDouble();
 
 			// randomly assign a uniqueString
 			System.out.println("Please enter x: ");
-			uniqueString = keyboard.next();//Integer.toString((int) (Math.random() * (toNum)) + 1);
-			
+			uniqueString = keyboard.next();// Integer.toString((int)
+											// (Math.random() * (toNum)) + 1);
+
 			orders[i] = new MoneyOrder(ssn, uniqueString, amount);
-					
-			// Check for duplicated uniqueStrings to maintain identity (unlikely, but just in case)
-			for(int j = 0; j < i; j++) {
-				if(orders[j].getMOID().equals(orders[i].getMOID()))
-					orders[j].setMOID(Integer.toString((int) (Math.random() * (toNum)) + 1));
+
+			// Check for duplicated uniqueStrings to maintain identity
+			// (unlikely, but just in case)
+			for (int j = 0; j < i; j++) {
+				if (orders[j].getMOID().equals(orders[i].getMOID()))
+					orders[j]
+							.setMOID(Integer.toString((int) (Math.random() * (toNum)) + 1));
 			}
 		}
 
