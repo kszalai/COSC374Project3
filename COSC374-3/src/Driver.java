@@ -59,21 +59,23 @@ public class Driver {
 	public static void customerStuff() {
 
 		// Ask the user how many money orders the user would like
-		int n = 0;
+		int n;
+
 		do {
 			System.out.println("How many money orders would you like?");
 			n = keyboard.nextInt();
 			keyboard.nextLine();
-			
-			if(n>10)
-				System.out.println("Error: Maximum of 10 Money Orders at a time!");
+
+			if (n > 10)
+				System.out
+						.println("Error: Maximum of 10 Money Orders at a time!");
 		} while (n < 0 || n > 10);
 
 		orders = new MoneyOrder[n];
 
 		// Variables needed for moneyOrder constructor
 		int ssn;
-		String uniqueString;
+		int uniqueString;
 		double amount;
 
 		// Make sure SSN is proper length
@@ -97,18 +99,17 @@ public class Driver {
 			amount = keyboard.nextDouble();
 
 			// randomly assign a uniqueString
-			System.out.println("Please enter x: ");
-			uniqueString = keyboard.next();// Integer.toString((int)
-											// (Math.random() * (toNum)) + 1);
+			do {
+				uniqueString = ((int) (Math.random() * (toNum)) + 1);
 
-			orders[i] = new MoneyOrder(ssn, uniqueString, amount);
+				orders[i] = new MoneyOrder(ssn, uniqueString, amount);
+			} while (Integer.toString(uniqueString).length() != 8);
 
 			// Check for duplicated uniqueStrings to maintain identity
 			// (unlikely, but just in case)
 			for (int j = 0; j < i; j++) {
-				if (orders[j].getMOID().equals(orders[i].getMOID()))
-					orders[j]
-							.setMOID(Integer.toString((int) (Math.random() * (toNum)) + 1));
+				if (orders[j].getMOID() == (orders[i].getMOID()))
+					orders[j].setMOID((int) (Math.random() * (toNum)) + 1);
 			}
 		}
 

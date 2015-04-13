@@ -17,7 +17,7 @@ import java.util.*;
 public class MoneyOrder {
 	// variables for customer info
 	private int ssn;
-	private String unString; // uniqueString in driver
+	private int unString; // uniqueString in driver
 
 	// variables for:
 	// 1) amount
@@ -28,7 +28,7 @@ public class MoneyOrder {
 	private int ID_String;
 
 	// parameterized constructor
-	public MoneyOrder(int ssn, String uniqueString, double amount) {
+	public MoneyOrder(int ssn, int uniqueString, double amount) {
 		this.ssn = ssn;
 		unString = uniqueString;
 		am = amount;
@@ -40,12 +40,12 @@ public class MoneyOrder {
 	}
 
 	// Get uniqueString
-	public String getMOID() {
+	public int getMOID() {
 		return unString;
 	}
 	
 	//Set uniqueString
-	public void setMOID(String uniqueString) {
+	public void setMOID(int uniqueString) {
 		unString = uniqueString;
 	}
 }

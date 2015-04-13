@@ -15,7 +15,7 @@ public class Merchant {
 		{
 			//an if statement tests each string and compares it to the moneyorder's
 			// signature to find a match.
-			if(signatureList[i].equalsIgnoreCase(MO.getMOID()))
+			if(signatureList[i].equals(Integer.toString(MO.getMOID())))
 			{
 				return true;
 			}
