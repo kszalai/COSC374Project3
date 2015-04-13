@@ -10,6 +10,12 @@
  * 
  * This is the main driver program
  ***********************************/
+
+
+/* TODO ****************************
+ * 
+ * format the amount variable to make sure it is like real money (2 decimal places)
+ */
 import java.util.*;
 
 public class Driver {
