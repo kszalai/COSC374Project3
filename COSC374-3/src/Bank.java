@@ -62,12 +62,13 @@ public class Bank {
 	
 	public void makeBankDigitalSignature(String fileName) throws IOException
 	{
-		int p = 457;
-		int q = 719;
-		int n = 328583;
-		int tn = 327408;
-		int e = 29;
-		int d = 169349;
+		//RSA variables.
+		int p = 457;	//A prime
+		int q = 719;	//Another Prime
+		int n = 328583;	//p multiplied by q
+		int tn = 327408;// (p-1)x(q-1)
+		int e = 29;		//selected integer
+		int d = 169349; //Gotten from wolfram alpha.
 		
 		//Set up a buffered reader to read each line from the file.
 		BufferedReader br = new BufferedReader(new FileReader(fileName));
