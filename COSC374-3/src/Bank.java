@@ -6,6 +6,8 @@ import java.io.IOException;
 public class Bank {
 	private String bankSignatureList[];
 	private String fileName = "BankSignatures.txt";
+	private int[] publickey = {29,328583};
+	private int[] privatekey = {169349,328583};
 	
 	/*
 	 * Gets a list of bank signatures from a
@@ -24,6 +26,48 @@ public class Bank {
 		
 		return bankSignatureList;
 	}
+	
+	/*
+	 * This function implements the RSA Digital Signature
+	 * algorithm for the bank, it saves the digital signature
+	 * to the end of the money order file.
+	 * It first opens the file and then retrieves the data within,
+	 * each line is run through the RSA algorithm and the private
+	 * key and public keys are both saved for later use.
+	 */
+	
+	public void makeBankDigitalSignature(String fileName) throws IOException
+	{
+		int p = 457;
+		int q = 719;
+		int n = 328583;
+		int tn = 327408;
+		int e = 29;
+		int d = 169349;
+		
+		//Set up a buffered reader to read each line from the file.
+		BufferedReader br = new BufferedReader(new FileReader(fileName));
+
+		try {
+				//get the first string at the top of the file
+				//This should be the amount, but it doesn't matter
+				//strings in the file.
+				String line = br.readLine();
+					
+				while(line != null)
+				{
+
+				}
+
+			} finally {
+
+				br.close();
+			}	
+				
+		
+	}
+	
+	
 	
 	/*
 	 * A method that obtains all bank uniqueness 
