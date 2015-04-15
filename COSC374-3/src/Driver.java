@@ -104,7 +104,7 @@ public class Driver {
 			System.out.print("$");
 			amount = keyboard.nextDouble();
 
-			// randomly assign a uniqueString
+			// randomly assign a uniqueString that is 8 digits long
 			do {
 				uniqueString = ((int) (Math.random() * (toNum)) + 1);
 
