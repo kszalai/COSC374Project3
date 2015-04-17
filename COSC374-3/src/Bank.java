@@ -81,6 +81,8 @@ public class Bank {
 				 * This will read each character individually
 				 * and then the RSA function will be applied to the 
 				 * character (character is read as an int).
+				 * The bank raises the message multiplied by
+				 * the customer's random number by d.
 				 * The result will be put into a string builder
 				 * which will then be inserted into the file
 				 * at the bottom of the file.
@@ -89,7 +91,7 @@ public class Bank {
 					
 				while(character != -1)
 				{
-					int c = (int) Math.pow(character,e)%n;
+					int c = (int) Math.pow(character,d)%n;
 					sb.append(c);
 				}
 
