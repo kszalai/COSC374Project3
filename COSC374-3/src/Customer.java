@@ -69,17 +69,12 @@ public class Customer {
 	//t = mk^e mod n
 	public void blinding(MoneyOrder mo)
 	{
+		
 		int[]pubKey = Bank.getPublicKey();
 		int e = pubKey[0];
 		int n = pubKey[1];
-		int k = (int)Math.random()*9;
-		int bssn = mo.getSSN();
-		int bam = mo.getAmount();
-	}
-	
-	//m^d mod n
-	public void unblinding()
-	{
-		
+		mo.setSSN((mo.getSSN() * (int) Math.pow(mo.getK(),e))%n);
+		mo.setAmount((mo.getAmount() * (int) Math.pow(mo.getK(),e))%n);
+		mo.setUnString((mo.getUnString() * (int) Math.pow(mo.getK(),e))%n);
 	}
 }

@@ -24,12 +24,14 @@ public class MoneyOrder {
 	private int ID_String;
 	
 	private int bankSig;
+	private int k;
 
 	// parameterized constructor
 	public MoneyOrder(int ssn, int uniqueString, int amount) {
 		this.ssn = ssn;
 		unString = uniqueString;
 		am = amount;
+		k = (int)Math.random()*9;
 	}
 
 	public String toString() { // return parameters to the display method
@@ -74,5 +76,30 @@ public class MoneyOrder {
 	public int getAmount() 
 	{
 		return am;
+	}
+
+	public void setSSN(int i) 
+	{
+		ssn = i;
+	}
+
+	public void setAmount(int i) 
+	{
+		am = i;	
+	}
+
+	public void setUnString(int i) 
+	{
+		unString = i;	
+	}
+
+	public int getK()
+	{
+		return k;
+	}
+	
+	public void setK(int k) 
+	{
+		this.k = k;
 	}
 }
