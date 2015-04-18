@@ -1,4 +1,15 @@
-
+/***********************************
+ * Kyle Szalai (E01006866)
+ * Rob Kendall (E00958364)
+ * Greg McKinstry (E01242940)
+ * Bryan Andrews (E01244329)
+ * COSC 374
+ * Project 3
+ * 
+ * merchant.java
+ * 
+ * [Description later]
+ ***********************************/
 public class Merchant {
 	
 	/*
