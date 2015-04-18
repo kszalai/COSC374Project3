@@ -5,6 +5,12 @@ public class Bank {
 	private String fileName = "BankSignatures.txt";
 	private int[] publicKey = {29,328583};
 	private int[] privateKey = {169349,328583};
+	private MoneyOrder[] moneyOrder;
+	
+	public Bank(MoneyOrder[] moneyOrder)
+	{
+		this.moneyOrder = moneyOrder;
+	}
 	
 	/*
 	 * Returns the public key to a 
@@ -94,6 +100,10 @@ public class Bank {
 			}	
 		
 		storeDigitalSignature(fileName, sb.toString());
+		for(int i=0;i<moneyOrder.length;i++)
+		{
+			moneyOrder[i].setBankSig(Integer.parseInt(sb.toString()));
+		}
 	}
 	
 	/*
@@ -102,7 +112,7 @@ public class Bank {
 	 * to the end of the file.
 	 */
 	
-	public static void storeDigitalSignature(String fileName, String digitalSignatire) throws IOException{
+	public static void storeDigitalSignature(String fileName, String digitalSignature) throws IOException{
 		
 		File f = new File(fileName);
 		
@@ -113,7 +123,7 @@ public class Bank {
 		
 		try {
 		    PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(fileName, true)));
-		    out.println(digitalSignatire);
+		    out.println(digitalSignature);
 		    out.close();
 		} catch (IOException e) {
 		    System.out.println("File does not exist.");

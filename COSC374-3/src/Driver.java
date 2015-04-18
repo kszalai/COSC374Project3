@@ -66,17 +66,7 @@ public class Driver {
 
 		// Ask the user how many money orders the user would like
 		int n;
-
-		do {
-			System.out.println("How many money orders would you like?");
-			n = keyboard.nextInt();
-			keyboard.nextLine();
-
-			if (n > 10)
-				System.out
-						.println("Error: Maximum of 10 Money Orders at a time!");
-		} while (n < 0 || n > 10);
-
+		n = (int)Math.random()*9;
 		orders = new MoneyOrder[n];
 
 		// Variables needed for moneyOrder constructor
@@ -96,13 +86,12 @@ public class Driver {
 		int toNum = 100000000;
 
 		// Enter the amount of each moneyOrder
+		System.out.println();
+		System.out.println("Please enter the amount you want for the money order");
+		System.out.print("$");
+		amount = keyboard.nextDouble();
+		
 		for (int i = 0; i < orders.length; i++) {
-			System.out.println();
-			System.out
-					.println("Please enter the amount you want for money order "
-							+ (i + 1));
-			System.out.print("$");
-			amount = keyboard.nextDouble();
 
 			// randomly assign a uniqueString that is 8 digits long
 			do {

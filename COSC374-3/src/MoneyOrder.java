@@ -19,13 +19,11 @@ public class MoneyOrder {
 	private int ssn;
 	private int unString; // uniqueString in driver
 
-	// variables for:
-	// 1) amount
-	// 2) number of money orders to generate
-	// 3) large string with all the info concatinated excluding the number of
-	// money orders generated
+	// variables for info
 	private double am;
 	private int ID_String;
+	
+	private int bankSig;
 
 	// parameterized constructor
 	public MoneyOrder(int ssn, int uniqueString, double amount) {
@@ -47,5 +45,17 @@ public class MoneyOrder {
 	//Set uniqueString
 	public void setMOID(int uniqueString) {
 		unString = uniqueString;
+	}
+	
+	//Get bankSig
+	public int getBankSig()
+	{
+		return bankSig;
+	}
+	
+	//Set bankSig
+	public void setBankSig(int bankSig)
+	{
+		this.bankSig = bankSig;
 	}
 }

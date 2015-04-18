@@ -27,6 +27,7 @@ public class Customer {
 	private int [] Left;
 	private int [] Right;
 	private MoneyOrder theOrder;
+	private int[] publicKey = {29,328583};
 	
 	//Constructor so we can work with a moneyOrder
 	public Customer(MoneyOrder moneyOrder)
