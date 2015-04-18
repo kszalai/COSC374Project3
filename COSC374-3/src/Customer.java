@@ -49,8 +49,15 @@ public class Customer {
 		int BCR1 = random.nextInt();
 		int BCR2 = random.nextInt();
 		
-		//For Left
-		int hL = hashCode(Left,BCL1,BCR2);
+		//For other left
+		Left[1] = getHashValue(Left[0],BCL1,BCR2);
+		
+		Right[1] = getHashValue(Right[0],BCR1,BCR2);
+	}
+	
+	public int getHashValue(int val1, int val2, int val3)
+	{
+		return Integer.toString(val1).hashCode() ^ Integer.toString(val2).hashCode() ^ Integer.toString(val3).hashCode();
 	}
 	
 	public void secretSplit()
