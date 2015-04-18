@@ -64,15 +64,15 @@ public class Driver {
 	// Will take in the detail for a new money order
 	public static void customerStuff() {
 
-		// Ask the user how many money orders the user would like
+		// Generates n copies of the moneyOrder
 		int n;
-		n = (int)Math.random()*9;
+		n = (int)(Math.random()*9);
 		orders = new MoneyOrder[n];
 
 		// Variables needed for moneyOrder constructor
 		int ssn;
 		int uniqueString;
-		double amount;
+		int amount;
 
 		// Make sure SSN is proper length
 		do {
@@ -89,7 +89,7 @@ public class Driver {
 		System.out.println();
 		System.out.println("Please enter the amount you want for the money order");
 		System.out.print("$");
-		amount = keyboard.nextDouble();
+		amount = keyboard.nextInt();
 		
 		for (int i = 0; i < orders.length; i++) {
 

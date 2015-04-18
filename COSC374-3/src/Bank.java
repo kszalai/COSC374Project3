@@ -3,7 +3,7 @@ import java.io.*;
 public class Bank {
 	private String bankSignatureList[];
 	private String fileName = "BankSignatures.txt";
-	private int[] publicKey = {29,328583};
+	private static int[] publicKey = {29,328583};
 	private int[] privateKey = {169349,328583};
 	private MoneyOrder[] moneyOrder;
 	
@@ -16,7 +16,7 @@ public class Bank {
 	 * Returns the public key to a 
 	 * calling function.
 	 */
-	public int[] getPublicKey()
+	public static int[] getPublicKey()
 	{
 		//returns the public key {e,n}
 		return publicKey;

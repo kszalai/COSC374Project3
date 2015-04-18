@@ -20,13 +20,13 @@ public class MoneyOrder {
 	private int unString; // uniqueString in driver
 
 	// variables for info
-	private double am;
+	private int am;
 	private int ID_String;
 	
 	private int bankSig;
 
 	// parameterized constructor
-	public MoneyOrder(int ssn, int uniqueString, double amount) {
+	public MoneyOrder(int ssn, int uniqueString, int amount) {
 		this.ssn = ssn;
 		unString = uniqueString;
 		am = amount;
@@ -47,6 +47,18 @@ public class MoneyOrder {
 		unString = uniqueString;
 	}
 	
+	//Get SSN
+	public int getSSN()
+	{
+		return ssn;
+	}
+	
+	//Get uniqueString
+	public int getUnString()
+	{
+		return unString;
+	}
+	
 	//Get bankSig
 	public int getBankSig()
 	{
@@ -57,5 +69,10 @@ public class MoneyOrder {
 	public void setBankSig(int bankSig)
 	{
 		this.bankSig = bankSig;
+	}
+
+	public int getAmount() 
+	{
+		return am;
 	}
 }
