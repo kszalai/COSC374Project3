@@ -23,7 +23,7 @@ public class MoneyOrder {
 	private int am;
 	private int ID_String;
 	
-	private int bankSig;
+	private int[] bankSig;
 	private int k;
 	
 	private int[] randomNum;
