@@ -14,11 +14,22 @@ public class Bank {
 		Bank.moneyOrder = moneyOrder;
 	}
 	
+	/*
+	 * This method obtains an integer
+	 * to be used during the unblinding process
+	 * which will be used to determine the 
+	 * legitimacy of the various money orders.
+	 */
 	public static void setComparisonInt(int comp)
 	{
 		comparison = comp;
 	}
 	
+	/*
+	 * This method determines the legitimacy
+	 * of the various money orders that the bank 
+	 * is given.
+	 */
 	public static boolean compare(int comp)
 	{
 		if(comparison == comp)
