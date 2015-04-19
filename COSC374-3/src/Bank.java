@@ -165,12 +165,17 @@ public class Bank {
 		}			
 	}
 
+	//Adds a bank order to the database array of bank orders
 	public static void addBankOrder(MoneyOrder x)
 	{
 		moneyOrder[moneyOrderCount] = x;
 		moneyOrderCount++;
 	}
-
+	
+	//Used to check to see if the bank order has been previously used
+	//If already used, returns the MoneyOrder that is already in the 
+	//database to find out who is the cheater, and their identification
+	//information.
 	public static MoneyOrder compareBankUniqueIDs(MoneyOrder x)
 	{
 		for (int i = 0; i < moneyOrderCount; i++)
