@@ -120,8 +120,18 @@ public class Driver {
 		//Secret splitting the money orders
 		for(int i=0;i<orders.length;i++)
 		{
-			
+			customer.secretSplit();
+			customer.bitCommit();
+			customer.blinding(orders[i]);
 		}
+		
+		for(int i=0;i<orders.length;i++)
+		{
+			System.out.println(orders[i]);
+		}
+		
+		
+		
 	}
 
 	public static void merchantStuff()
