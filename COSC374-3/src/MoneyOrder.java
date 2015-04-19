@@ -21,9 +21,8 @@ public class MoneyOrder {
 
 	// variables for info
 	private int am;
-	private int ID_String;
 	
-	private int[] bankSig;
+	private int[] bankSig = new int[4];
 	private int k;
 	
 	private int[] randomNum;
@@ -75,15 +74,15 @@ public class MoneyOrder {
 	}
 	
 	//Get bankSig
-	public int getBankSig()
+	public int[] getBankSig()
 	{
 		return bankSig;
 	}
 	
 	//Set bankSig
-	public void setBankSig(int bankSig)
+	public void setBankSig(int bankSig, int i)
 	{
-		this.bankSig = bankSig;
+		this.bankSig[i] = bankSig;
 	}
 
 	public int getAmount() 
