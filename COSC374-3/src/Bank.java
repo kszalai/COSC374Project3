@@ -1,22 +1,23 @@
 import java.io.*;
 
 public class Bank {
-	private String bankSignatureList[];
-	private String fileName = "BankSignatures.txt";
-	private static int[] publicKey = {29,328583};
+	private static String bankSignatureList[];
+	private static String fileName = "BankSignatures.txt";
+	private int[] publicKey = {29,328583};
 	private int[] privateKey = {169349,328583};
-	private MoneyOrder[] moneyOrder;
+	private static MoneyOrder[] moneyOrder = new MoneyOrder[100];
+	private static int moneyOrderCount = 0;
 	
 	public Bank(MoneyOrder[] moneyOrder)
 	{
-		this.moneyOrder = moneyOrder;
+		Bank.moneyOrder = moneyOrder;
 	}
 	
 	/*
 	 * Returns the public key to a 
 	 * calling function.
 	 */
-	public static int[] getPublicKey()
+	public int[] getPublicKey()
 	{
 		//returns the public key {e,n}
 		return publicKey;
@@ -37,7 +38,7 @@ public class Bank {
 	 * file and stores them in a signature list.
 	 * Then returns the list.
 	 */
-	public String[] getBankSignatures()
+	public static String[] getBankSignatures()
 	{
 		try{
 		retrieveSignaturesFromFile();
@@ -140,7 +141,7 @@ public class Bank {
 	 * strings from a file and stores them in the
 	 * bankSignatureList string array.
 	 */
-	private void retrieveSignaturesFromFile() throws IOException {
+	private static void retrieveSignaturesFromFile() throws IOException {
 		//Total number of uniqueness strings should be at the top of the file.
 		int totalEntries;
 
@@ -168,8 +169,23 @@ public class Bank {
 		} finally {
 
 		br.close();
-		}	
-		
+		}			
+	}
+	
+	public static void addBankOrder(MoneyOrder x)
+	{
+		moneyOrder[moneyOrderCount] = x;
+		moneyOrderCount++;
+	}
+	
+	public static MoneyOrder compareBankUniqueIDs(MoneyOrder x)
+	{
+		for (int i = 0; i < moneyOrderCount; i++)
+		{
+			if (x.getMOID() == moneyOrder[i].getMOID())
+			return moneyOrder[i];	
+		}
+		return null;
 	}
 
 }
