@@ -26,26 +26,20 @@ public class Customer {
 	
 	private int [] Left;
 	private int [] Right;
-	private MoneyOrder theOrder;
+	private MoneyOrder[] theOrders;
 	private int[] publicKey = {29,328583};
 	
 	//Constructor so we can work with a moneyOrder
-	public Customer(MoneyOrder moneyOrder)
+	public Customer(MoneyOrder[] moneyOrder)
 	{
 		Left = new int[2];
 		Right = new int[2];
-		theOrder = moneyOrder;
+		theOrders = moneyOrder;
 	}
 	
 	public void bitCommit()
-	{
-		//Generate random numbers for bit commit
+	{	
 		Random random = new Random();
-		//Left is a random integer
-		Left[0] = random.nextInt();
-		//Right is the XOR of Left and the moneyOrder ID
-		Right[0]  = Left[0] ^ theOrder.getMOID();
-		
 		int BCL1 = random.nextInt();
 		int BCR1 = random.nextInt();
 		int BCR2 = random.nextInt();
@@ -63,7 +57,12 @@ public class Customer {
 	
 	public void secretSplit()
 	{
-		
+		//Generate random numbers for bit commit
+		Random random = new Random();
+		//Left is a random integer
+		Left[0] = random.nextInt();
+		//Right is the XOR of Left and the moneyOrder ID
+		Right[0]  = Left[0] ^ theOrders[0].getMOID();	
 	}
 	
 	//t = mk^e mod n

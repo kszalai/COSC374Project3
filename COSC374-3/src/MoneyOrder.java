@@ -25,20 +25,33 @@ public class MoneyOrder {
 	
 	private int bankSig;
 	private int k;
+	
+	private int[] randomNum;
+	private int[] secretNum;
 
 	// parameterized constructor
 	public MoneyOrder(int ssn, int uniqueString, int amount) {
 		this.ssn = ssn;
 		unString = uniqueString;
 		am = amount;
-		k = (int)Math.random()*9;
+		k = (int)(Math.random()*9);
 	}
 
 	public String toString() { // return parameters to the display method
 		// in MoneyOrder class
 		return (ssn + " " + unString + " " + am);
 	}
-
+	
+	public int[] getRandomNum()
+	{
+		return randomNum;
+	}
+	
+	public int[] getSecretNum()
+	{
+		return secretNum;
+	}
+	
 	// Get uniqueString
 	public int getMOID() {
 		return unString;

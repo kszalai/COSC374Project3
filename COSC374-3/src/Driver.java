@@ -28,7 +28,7 @@ public class Driver {
 	public static void main(String[] args) {
 		int response;
 
-		System.out.println("Welcome to the Dank Memes Exchange");
+		System.out.println("Welcome to the FrootMoneysCoin Exchange");
 
 		// Keep menu running while valid responses
 		do {
@@ -48,7 +48,7 @@ public class Driver {
 				break;
 			case 2:
 				// mechantStuff
-				System.out.println("Bit: " + merchant.randomSelectorBit());
+				merchantStuff();
 				break;
 			case 3:
 				// bankStuff
@@ -62,8 +62,8 @@ public class Driver {
 	}
 
 	// Will take in the detail for a new money order
-	public static void customerStuff() {
-
+	public static void customerStuff() 
+	{
 		// Generates n copies of the moneyOrder
 		int n;
 		n = (int)(Math.random()*9);
@@ -90,7 +90,7 @@ public class Driver {
 		System.out.println("Please enter the amount you want for the money order");
 		System.out.print("$");
 		amount = keyboard.nextInt();
-		
+
 		for (int i = 0; i < orders.length; i++) {
 
 			// randomly assign a uniqueString that is 8 digits long
@@ -110,8 +110,22 @@ public class Driver {
 
 		System.out.println("Data Structure: ");
 		for (int i = 0; i < n; i++) {
-			System.out.println(orders[i] + " ");
+			System.out.println(orders[i] + " " + orders[i].getK());
 			System.out.println("");
 		}
+		
+		//Create a customer so we can perform actions on the money order
+		Customer customer = new Customer(orders);
+		
+		//Secret splitting the money orders
+		for(int i=0;i<orders.length;i++)
+		{
+			
+		}
+	}
+
+	public static void merchantStuff()
+	{
+		System.out.println("");
 	}
 }
