@@ -131,7 +131,7 @@ public class Driver {
 		//Bank signs blinded moneyOrder
 		try 
 		{
-			theBank.makeBankDigitalSignature("bankSigs.txt");
+			theBank.makeBankDigitalSignature();
 		} 
 		catch (IOException e) 
 		{
