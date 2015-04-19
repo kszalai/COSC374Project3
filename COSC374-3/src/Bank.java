@@ -7,10 +7,25 @@ public class Bank {
 	private static int[] privateKey = {169349,328583};
 	private static MoneyOrder[] moneyOrder = new MoneyOrder[100];
 	private static int moneyOrderCount = 0;
+	private static int comparison;
 
 	public Bank(MoneyOrder[] moneyOrder)
 	{
 		Bank.moneyOrder = moneyOrder;
+	}
+	
+	public static void setComparisonInt(int comp)
+	{
+		comparison = comp;
+	}
+	
+	public static boolean compare(int comp)
+	{
+		if(comparison == comp)
+		{
+			return true;
+		}
+		return false;
 	}
 
 	/*
@@ -60,7 +75,7 @@ public class Bank {
 	 * key and public keys are both saved for later use.
 	 */
 
-	public void makeBankDigitalSignature() throws IOException
+	public void makeBankDigitalSignature(MoneyOrder MO) throws IOException
 	{
 		//RSA variables.
 		int p = 457;	//A prime
@@ -70,10 +85,7 @@ public class Bank {
 		int e = 29;		//selected integer
 		int d = 169349; //Gotten from wolfram alpha.
 
-		//String builder with a capacity 500 characters long
-		//is this long enough too long? eh?
-		StringBuilder sb = new StringBuilder(500);
-
+		
 		/*
 		 * This will read each character individually
 		 * and then the RSA function will be applied to the 
@@ -84,7 +96,6 @@ public class Bank {
 		 * which will then be inserted into the file
 		 * at the bottom of the file.
 		 */
-		String signature = "B@nK$1GnAtUR3";
 
 		for(int i=0;i<signature.length();i++)
 		{

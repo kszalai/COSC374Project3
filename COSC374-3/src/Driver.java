@@ -127,6 +127,26 @@ public class Driver {
 		}
 		
 		Bank theBank = new Bank(orders);
+		boolean set = true;
+		for(int i=0; i<orders.length-1; i++)
+		{
+			customer.unblinding(orders[i]);
+			
+			if(set){
+			theBank.setComparisonInt(orders[i].getAmount());
+			set = false;
+			}
+			
+			if(theBank.compare(orders[i].getAmount()))
+			{
+				System.out.println("Amount is different, money order is a fraud.");
+				return;
+			}
+				
+			
+			
+		}
+		
 		
 		//Bank signs blinded moneyOrder
 		try 
