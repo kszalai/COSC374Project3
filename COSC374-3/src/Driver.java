@@ -12,6 +12,7 @@
  ***********************************/
 
 
+import java.io.IOException;
 /* TODO ****************************
  * 
  * format the amount variable to make sure it is like real money (2 decimal places)
@@ -125,10 +126,18 @@ public class Driver {
 			customer.blinding(orders[i]);
 		}
 		
-		for(int i=0;i<orders.length;i++)
+		Bank theBank = new Bank(orders);
+		
+		//Bank signs blinded moneyOrder
+		try 
 		{
-			System.out.println(orders[i]);
+			theBank.makeBankDigitalSignature("bankSigs.txt");
+		} 
+		catch (IOException e) 
+		{
+			System.out.println("Error: Cannot write to file");
 		}
+		
 		
 		
 		
