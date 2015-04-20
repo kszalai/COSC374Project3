@@ -121,6 +121,32 @@ public class Bank {
 			moneyOrder[i].setBankSig(Integer.parseInt(sb.toString()));
 		}
 	}
+	/*
+	 * Verify the bank's signature given an
+	 * unblinded money order.
+	 */
+	public static boolean verifyBankSignature(MoneyOrder MO)
+	{
+		int e = publicKey[0];
+		int n = publicKey[1];
+		int i = 0;
+		if(MO.getAmount() != (Math.pow(MO.getBankSig(i), e)%n))
+		{
+			return false;
+		} 
+		i++;
+		if(MO.getUnString() != (Math.pow(MO.getBankSig(i), e)%n))
+		{
+			return false;
+		}
+		i++;
+		if(MO.getK() != (Math.pow(MO.getBankSig(i), e)%n))
+		{
+			return false;
+		}
+		
+		return true;
+	}
 
 	/*
 	 * This method excepts a file name and a digital signature string

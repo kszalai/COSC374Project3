@@ -133,11 +133,11 @@ public class Driver {
 			customer.unblinding(orders[i]);
 			
 			if(set){
-			theBank.setComparisonInt(orders[i].getAmount());
+			Bank.setComparisonInt(orders[i].getAmount());
 			set = false;
 			}
 			
-			if(theBank.compare(orders[i].getAmount()))
+			if(Bank.compare(orders[i].getAmount()))
 			{
 				System.out.println("Amount is different, money order is a fraud.");
 				return;

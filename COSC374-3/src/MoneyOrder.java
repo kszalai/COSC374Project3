@@ -74,9 +74,9 @@ public class MoneyOrder {
 	}
 	
 	//Get bankSig
-	public int[] getBankSig()
+	public int getBankSig(int i)
 	{
-		return bankSig;
+		return bankSig[i];
 	}
 	
 	//Set bankSig
