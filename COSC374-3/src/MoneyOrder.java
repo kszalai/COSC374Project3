@@ -33,7 +33,7 @@ public class MoneyOrder {
 		this.ssn = ssn;
 		unString = uniqueString;
 		am = amount;
-		k = (int)(Math.random()*9);
+		k = (int)((Math.random()*7)+2);
 	}
 
 	public String toString() { // return parameters to the display method

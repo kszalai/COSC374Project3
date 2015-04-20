@@ -67,7 +67,7 @@ public class Driver {
 	{
 		// Generates n copies of the moneyOrder
 		int n;
-		n = (int)(Math.random()*9);
+		n = (int)((Math.random()*7)+2);
 		orders = new MoneyOrder[n];
 
 		// Variables needed for moneyOrder constructor
@@ -136,7 +136,6 @@ public class Driver {
 			Bank.setComparisonInt(orders[i].getAmount());
 			set = false;
 			}
-			
 			if(Bank.compare(orders[i].getAmount()))
 			{
 				System.out.println("Amount is different, money order is a fraud.");

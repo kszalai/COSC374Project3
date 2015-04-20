@@ -24,7 +24,6 @@ public class Bank {
 			int randomBit = (int) Math.round(Math.random());
 			merchKey = merchKey.concat(Integer.toString(randomBit));
 		}
-		System.out.println("merch key: " + merchKey);
 	}
 	
 	/*
@@ -45,7 +44,7 @@ public class Bank {
 	 */
 	public static boolean compare(int comp)
 	{
-		if(comparison == comp)
+		if(comparison != comp)
 		{
 			return true;
 		}
