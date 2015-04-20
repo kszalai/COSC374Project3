@@ -54,6 +54,14 @@ value. The merchant has their own hard-coded n-bit merchant string. The merchant
 then asks to open either the left or the right side of the money order based on
 what their bit string is. Based on this, the merchant accepts the money order and
 sends it to the bank where it undergoes further validation.
+The bank then recieves the money order from the merchant, and if the unique ID has already
+been put into the database, the bank will refuse the order.  Depending on whether or not the
+bit string of undoing the bit commitment is the same or not, the bank will know whether or not
+it is the customer or the merchant that is attempting to cheat the system.  If the customer is cheating,
+then the bank will then XOR one identity string line from their money order in the records with 
+one of the other identity string lines in the merchant's copy, a left and right string.  The xor'ed 
+identity string will then contain all of the information as to the customer, and in this case, their
+Social security number.
 ----------------------------------------------------------------------------------
 Output Formatting
 Output is returned to the user in the form of print out statements.
