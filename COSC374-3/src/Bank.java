@@ -8,10 +8,22 @@ public class Bank {
 	private static MoneyOrder[] moneyOrder = new MoneyOrder[100];
 	private static int moneyOrderCount = 0;
 	private static int comparison;
+	private static String merchKey = "";
 
 	public Bank(MoneyOrder[] moneyOrder)
 	{
 		Bank.moneyOrder = moneyOrder;
+	}
+	
+	public static void setMerchKey(int n)
+	{
+		for(int i = 0 ; i < n ; i++)
+		{
+			int randomBit = (int)Math.random();
+		merchKey = merchKey.concat(Integer.toString(randomBit));
+		}
+		merchKey = merchKey.concat("N");
+		System.out.println("merch key: " + merchKey);
 	}
 	
 	/*
