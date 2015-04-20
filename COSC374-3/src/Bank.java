@@ -15,6 +15,8 @@ public class Bank {
 		Bank.moneyOrder = moneyOrder;
 	}
 	
+	//Generates a random bitstring based of the number of moneyOrders
+	//The bank requests for the customer to make for the one money order.
 	public static void setMerchKey(int n)
 	{
 		for(int i = 0 ; i < n ; i++)
