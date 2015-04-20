@@ -19,10 +19,9 @@ public class Bank {
 	{
 		for(int i = 0 ; i < n ; i++)
 		{
-			int randomBit = (int)Math.random();
-		merchKey = merchKey.concat(Integer.toString(randomBit));
+			int randomBit = (int) Math.round(Math.random());
+			merchKey = merchKey.concat(Integer.toString(randomBit));
 		}
-		merchKey = merchKey.concat("N");
 		System.out.println("merch key: " + merchKey);
 	}
 	
