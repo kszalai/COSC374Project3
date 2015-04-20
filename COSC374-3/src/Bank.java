@@ -121,18 +121,26 @@ public class Bank {
 		 * at the bottom of the file.
 		 */
 
-		for(int i=0;i<signature.length();i++)
+		for(int i=0;i<3;i++)
 		{
-			int character = signature.charAt(i);
-			int c = (int) Math.pow(character,d)%n;
-			sb.append(c);
+			if(i == 0)
+			{
+				MO.setBankSig((int) Math.pow(MO.getAmount(),d)%n, i);
+			}
+			if(i == 1)
+			{
+				MO.setBankSig((int) Math.pow(MO.getUnString(),d)%n, i);
+			}
+			if(i == 2)
+			{
+				if(i == 1)
+				{
+					MO.setBankSig((int) Math.pow(MO.getK(),d)%n, i);
+				}
+			}
 		}	
 
-		storeDigitalSignature("bankSigs.txt", sb.toString());
-		for(int i=0;i<moneyOrder.length;i++)
-		{
-			moneyOrder[i].setBankSig(Integer.parseInt(sb.toString()));
-		}
+
 	}
 	/*
 	 * Verify the bank's signature given an

@@ -68,7 +68,6 @@ public class Driver {
 		// Generates n copies of the moneyOrder
 		int n;
 		n = (int)(Math.random()*9);
-		Bank.setMerchKey(n);
 		orders = new MoneyOrder[n];
 
 		// Variables needed for moneyOrder constructor
@@ -149,16 +148,7 @@ public class Driver {
 		}
 		
 		
-//		//Bank signs blinded moneyOrder
-//		try 
-//		{
-//			theBank.makeBankDigitalSignature();
-//		} 
-//		catch (IOException e) 
-//		{
-//			System.out.println("Error: Cannot write to file");
-//		}
-		
+	
 		
 		
 		
